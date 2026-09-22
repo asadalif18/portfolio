@@ -2,7 +2,7 @@
 
 A production-grade personal portfolio showcasing my work in **Computer Vision**, **LLM Agents**, **MCP Servers**, **RAG Pipelines**, **Voice AI (STT/TTS)**, and **Edge AI** — built with vanilla HTML/CSS/JS and a live 3D neural network rendered with Three.js.
 
-**Live site:** [https://asadalif18.github.io](https://asadalif18.github.io)
+**Live site:** [![Live](https://img.shields.io/badge/live-asadalif18.github.io-22d3ee?style=flat-square)](https://asadalif18.github.io)
 
 ---
 
