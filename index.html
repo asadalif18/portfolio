@@ -9,6 +9,11 @@
 <meta name="author" content="Asad Ali" />
 <meta name="keywords" content="AI Engineer, Computer Vision, LLM Engineer, AI Agents, MCP, LangGraph, CrewAI, YOLOv12, SAM 2, GPT-4.1, Claude 3.7, Llama 4, RAG, STT, TTS, Edge AI, Jetson Orin, TensorRT, Python, FastAPI" />
 
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Asad Ali — Senior AI/ML, Computer Vision & LLM Engineer" />
+<meta property="og:description" content="Production-grade AI systems: Computer Vision, LLMs, Agentic AI, Voice AI, and Edge Deployment for global clients." />
+<meta property="og:url" content="https://asadalif18.github.io/portfolio/" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -33,6 +38,7 @@
   --emerald:#34d399;
   --amber:#fbbf24;
   --rose:#fb7185;
+  --linkedin:#0a66c2;
   --grad-primary:linear-gradient(135deg,#22d3ee 0%,#818cf8 55%,#a78bfa 100%);
   --grad-alt:linear-gradient(135deg,#34d399 0%,#22d3ee 50%,#818cf8 100%);
   --grad-soft:linear-gradient(135deg,rgba(34,211,238,.14),rgba(167,139,250,.10));
@@ -166,7 +172,6 @@ header.scrolled{
   -webkit-mask-image:radial-gradient(ellipse 85% 65% at 50% 40%,#000 25%,transparent 100%);
 }
 
-/* Floating tech chunks in hero */
 .chunks-layer{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
 .chunk{
   position:absolute;
@@ -290,6 +295,16 @@ header.scrolled{
 .btn-ghost:hover{
   transform:translateY(-3px);border-color:var(--line-accent);
   background:rgba(34,211,238,.08);
+}
+.btn-linkedin{
+  border-color:rgba(10,102,194,.4);color:#7db9f0;
+  background:rgba(10,102,194,.08);
+}
+.btn-linkedin:hover{
+  transform:translateY(-3px);
+  border-color:rgba(10,102,194,.7);
+  background:rgba(10,102,194,.16);
+  color:#a8d0f5;
 }
 
 .metrics-strip{
@@ -429,7 +444,12 @@ header.scrolled{
 .info-row svg{width:17px;height:17px;color:var(--cyan);flex-shrink:0;margin-top:4px}
 .info-row .k{color:var(--muted);min-width:82px;font-size:.82rem;font-weight:500}
 .info-row .v{color:var(--txt);font-weight:500;word-break:break-word}
-.info-row a:hover{color:var(--cyan)}
+.info-row .v a{
+  color:var(--txt);
+  border-bottom:1px dashed rgba(34,211,238,.35);
+  transition:color .2s ease,border-color .2s ease;
+}
+.info-row .v a:hover{color:var(--cyan);border-bottom-color:var(--cyan)}
 
 /* TIMELINE */
 .timeline{position:relative;padding-left:38px}
@@ -617,26 +637,30 @@ header.scrolled{
 }
 
 /* CERTIFICATIONS */
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 .cert{
   background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:20px;display:flex;gap:14px;align-items:flex-start;
+  padding:22px;display:flex;gap:14px;align-items:flex-start;
   transition:border-color .3s ease,transform .3s ease,background .3s ease;
 }
 .cert:hover{border-color:var(--line-accent);transform:translateY(-3px);background:var(--card-hi)}
 .cert-badge{
-  width:40px;height:40px;border-radius:10px;flex-shrink:0;
+  width:44px;height:44px;border-radius:11px;flex-shrink:0;
   display:grid;place-items:center;
   background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.24);
 }
-.cert-badge svg{width:18px;height:18px;color:var(--violet)}
-.cert-info h4{font-size:.87rem;font-weight:600;line-height:1.45;margin-bottom:6px}
-.cert-info .meta{font-size:.73rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.cert-badge svg{width:20px;height:20px;color:var(--violet)}
+.cert-info{flex-grow:1;min-width:0}
+.cert-info h4{font-size:.88rem;font-weight:600;line-height:1.45;margin-bottom:6px}
+.cert-info .meta{font-size:.73rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:10px}
 .cert-info .meta-link{
-  font-size:.73rem;color:var(--cyan);font-weight:500;
-  display:inline-block;margin-top:7px;
+  font-size:.76rem;color:var(--cyan);font-weight:600;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .25s ease;
 }
-.cert-info .meta-link:hover{text-decoration:underline}
+.cert-info .meta-link:hover{gap:11px;text-decoration:none}
+.cert-info .meta-link svg{width:12px;height:12px;transition:transform .25s ease}
+.cert-info .meta-link:hover svg{transform:translateX(3px)}
 
 /* AWARDS */
 .awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
@@ -695,7 +719,12 @@ header.scrolled{
   border-color:var(--line-accent);transform:translateY(-3px);
   background:rgba(34,211,238,.08);
 }
+.contact-item.linkedin:hover{
+  border-color:rgba(10,102,194,.55);
+  background:rgba(10,102,194,.12);
+}
 .contact-item svg{width:17px;height:17px;color:var(--cyan);flex-shrink:0}
+.contact-item.linkedin svg{color:#7db9f0}
 .contact-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
 
 /* FOOTER */
@@ -797,7 +826,7 @@ footer{
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Stack</a>
-      <a href="#testimonials">Clients</a>
+      <a href="#certifications">Credentials</a>
       <a href="#contact" class="nav-cta">Hire Me</a>
     </nav>
 
@@ -816,10 +845,8 @@ footer{
     <div class="grid-overlay"></div>
   </div>
 
-  <!-- 3D Neural Network Canvas -->
   <canvas id="three-canvas"></canvas>
 
-  <!-- Floating tech chunks -->
   <div class="chunks-layer" aria-hidden="true">
     <div class="chunk c1"><span class="dot"></span>YOLOv12 · detect</div>
     <div class="chunk violet c2"><span class="dot"></span>LangGraph · agent</div>
@@ -863,6 +890,10 @@ footer{
         <a href="#projects" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
           View Case Studies
+        </a>
+        <a href="https://www.linkedin.com/in/asadalif18/" target="_blank" rel="noopener" class="btn btn-linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Connect on LinkedIn
         </a>
         <a href="mailto:asadalif18@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20AI%20Engagement" class="btn btn-ghost">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1085,8 +1116,12 @@ footer{
           <span class="k">Phone</span><span class="v"><a href="tel:+923060122333">+92 306 0122333</a></span>
         </div>
         <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/asadalif18/" target="_blank" rel="noopener">LinkedIn Profile</a></span>
+        </div>
+        <div class="info-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          <span class="k">GitHub</span><span class="v"><a href="https://github.com/asadalif18" target="_blank" rel="noopener">github.com/asadalif18</a></span>
+          <span class="k">GitHub</span><span class="v"><a href="https://github.com/asadalif18" target="_blank" rel="noopener">GitHub Profile</a></span>
         </div>
         <div class="info-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -2071,7 +2106,7 @@ footer{
   <div class="container">
     <div class="reveal">
       <div class="eyebrow">Credentials</div>
-      <h2 class="section-title">Licenses &amp; Certifications</h2>
+      <h2 class="section-title">Licenses &amp; <span class="grad">Certifications</span></h2>
       <p class="section-sub">
         Continuous learning validated through globally recognized industry certifications
         and peer-reviewed assessments.
@@ -2085,7 +2120,10 @@ footer{
         <div class="cert-info">
           <h4>AI Web Developer — Top 25% Globally</h4>
           <div class="meta">TestDome · Aug 2025</div>
-          <a href="https://www.testdome.com/certificates" target="_blank" rel="noopener" class="meta-link">View Certificate →</a>
+          <a href="https://www.testdome.com/certificates/22238188db4349a6a4d563b5543bd26e" target="_blank" rel="noopener" class="meta-link">
+            View Certificate
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2094,7 +2132,10 @@ footer{
         <div class="cert-info">
           <h4>Google Crowdsource Learning Program</h4>
           <div class="meta">Google · Sep 2023</div>
-          <a href="https://crowdsource.google.com/" target="_blank" rel="noopener" class="meta-link">View Program →</a>
+          <a href="https://drive.google.com/drive/folders/1aZPGVgN8PJy6oJVHXSFUONW0AU6827h6" target="_blank" rel="noopener" class="meta-link">
+            View Program
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2103,7 +2144,10 @@ footer{
         <div class="cert-info">
           <h4>Registered PEC Computer Engineer</h4>
           <div class="meta">Pakistan Engineering Council · Mar 2023</div>
-          <a href="https://www.pec.org.pk/" target="_blank" rel="noopener" class="meta-link">Verify Registration →</a>
+          <a href="https://www.pec.org.pk/" target="_blank" rel="noopener" class="meta-link">
+            Verify Registration
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2111,8 +2155,11 @@ footer{
         <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></div>
         <div class="cert-info">
           <h4>IBM AI Engineering Professional Certificate</h4>
-          <div class="meta">IBM / Coursera · Feb 2023</div>
-          <a href="https://www.coursera.org/professional-certificates/ai-engineer" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+          <div class="meta">IBM · Feb 2023</div>
+          <a href="https://www.credly.com/badges/8c74053b-f05d-4089-9669-5427061a61a2/" target="_blank" rel="noopener" class="meta-link">
+            View Credential
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2120,8 +2167,11 @@ footer{
         <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="cert-info">
           <h4>AI Capstone Project with Deep Learning</h4>
-          <div class="meta">IBM / Coursera · Feb 2023</div>
-          <a href="https://www.coursera.org/learn/ai-capstone-project-deep-learning" target="_blank" rel="noopener" class="meta-link">View Certificate →</a>
+          <div class="meta">IBM · Feb 2023</div>
+          <a href="https://www.coursera.org/account/accomplishments/certificate/SNV8K4ZBQYW5" target="_blank" rel="noopener" class="meta-link">
+            View Certificate
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2129,8 +2179,11 @@ footer{
         <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg></div>
         <div class="cert-info">
           <h4>Deep Learning with TensorFlow</h4>
-          <div class="meta">IBM / Coursera · Feb 2023</div>
-          <a href="https://www.coursera.org/learn/deep-learning-tensorflow" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+          <div class="meta">IBM · Feb 2023</div>
+          <a href="https://www.credly.com/badges/763fde28-13bd-4e22-8d72-420d211f1e04/" target="_blank" rel="noopener" class="meta-link">
+            View Credential
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2138,8 +2191,11 @@ footer{
         <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <div class="cert-info">
           <h4>Deep Neural Networks with PyTorch <span style="color:var(--amber)">(Honors)</span></h4>
-          <div class="meta">IBM / Coursera · Feb 2023</div>
-          <a href="https://www.coursera.org/learn/deep-neural-networks-with-pytorch" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+          <div class="meta">IBM · Feb 2023</div>
+          <a href="https://www.credly.com/badges/1edb0884-cab5-48a1-9f9a-6b566e9274f8/" target="_blank" rel="noopener" class="meta-link">
+            View Credential
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2147,8 +2203,11 @@ footer{
         <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <div class="cert-info">
           <h4>Computer Vision &amp; Image Processing Essentials</h4>
-          <div class="meta">IBM / Coursera · Jan 2023</div>
-          <a href="https://www.coursera.org/learn/computer-vision-image-processing" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+          <div class="meta">IBM · Jan 2023</div>
+          <a href="https://www.credly.com/badges/d275c455-bc0e-4406-9435-943a3716cc1b/" target="_blank" rel="noopener" class="meta-link">
+            View Credential
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2156,8 +2215,11 @@ footer{
         <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/></svg></div>
         <div class="cert-info">
           <h4>Deep Learning Essentials with Keras</h4>
-          <div class="meta">IBM / Coursera · Jan 2023</div>
-          <a href="https://www.coursera.org/learn/deep-learning-keras" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+          <div class="meta">IBM · Jan 2023</div>
+          <a href="https://www.credly.com/badges/176c18a1-56c9-4b1d-a4b5-bc46c1c584e5/" target="_blank" rel="noopener" class="meta-link">
+            View Credential
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2165,8 +2227,11 @@ footer{
         <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
         <div class="cert-info">
           <h4>Machine Learning with Python <span style="color:var(--amber)">(Honors)</span></h4>
-          <div class="meta">IBM / Coursera · Jan 2023</div>
-          <a href="https://www.coursera.org/learn/machine-learning-with-python" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+          <div class="meta">IBM · Jan 2023</div>
+          <a href="https://www.credly.com/badges/faefe4b8-bd84-4d03-8750-34bc96900328/" target="_blank" rel="noopener" class="meta-link">
+            View Credential
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
@@ -2281,15 +2346,19 @@ footer{
       <div class="contact-links">
         <a href="mailto:asadalif18@gmail.com" class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-          asadalif18@gmail.com
+          Email Me
         </a>
         <a href="tel:+923060122333" class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +92 306 0122333
+          Call Me
+        </a>
+        <a href="https://www.linkedin.com/in/asadalif18/" target="_blank" rel="noopener" class="contact-item linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn Profile
         </a>
         <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          github.com/asadalif18
+          GitHub Profile
         </a>
       </div>
 
@@ -2298,9 +2367,9 @@ footer{
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           Start a Conversation
         </a>
-        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="btn btn-ghost">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          View GitHub
+        <a href="https://www.linkedin.com/in/asadalif18/" target="_blank" rel="noopener" class="btn btn-linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Connect on LinkedIn
         </a>
       </div>
     </div>
@@ -2319,6 +2388,7 @@ footer{
     </div>
     <div style="font-size:.8rem;color:var(--dim)">© <span id="year"></span> · All rights reserved</div>
     <div class="footer-links">
+      <a href="https://www.linkedin.com/in/asadalif18/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/asadalif18" target="_blank" rel="noopener">GitHub</a>
       <a href="mailto:asadalif18@gmail.com">Email</a>
       <a href="#hero">Back to Top ↑</a>
@@ -2342,9 +2412,6 @@ footer{
 <script type="module">
 import * as THREE from 'three';
 
-/* =========================================================
-   3D REVOLVING NEURAL NETWORK
-   ========================================================= */
 const canvas = document.getElementById('three-canvas');
 
 const scene = new THREE.Scene();
@@ -2361,16 +2428,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor(0x000000, 0);
 
-/* ----- Neural Network Generation ----- */
 const networkGroup = new THREE.Group();
 scene.add(networkGroup);
 
-const layers = [5, 8, 10, 10, 8, 5]; // Neural network architecture
+const layers = [5, 8, 10, 10, 8, 5];
 const layerSpacing = 3.4;
 const nodeRadius = 0.14;
-const totalNodes = layers.reduce((a, b) => a + b, 0);
 
-/* Node positions */
 const nodePositions = [];
 layers.forEach((count, layerIdx) => {
   const x = (layerIdx - (layers.length - 1) / 2) * layerSpacing;
@@ -2382,13 +2446,9 @@ layers.forEach((count, layerIdx) => {
   }
 });
 
-/* Node geometry & material */
 const nodeGeo = new THREE.SphereGeometry(nodeRadius, 16, 16);
-
-/* Colors: cyan → violet across layers */
 const cyanColor = new THREE.Color(0x22d3ee);
 const violetColor = new THREE.Color(0xa78bfa);
-const emeraldColor = new THREE.Color(0x34d399);
 
 const nodeMaterial = new THREE.MeshBasicMaterial({
   color: cyanColor,
@@ -2396,7 +2456,6 @@ const nodeMaterial = new THREE.MeshBasicMaterial({
   opacity: 0.95
 });
 
-/* Create nodes */
 const nodeMeshes = [];
 nodePositions.forEach((p, i) => {
   const mat = nodeMaterial.clone();
@@ -2413,7 +2472,6 @@ nodePositions.forEach((p, i) => {
   nodeMeshes.push(mesh);
 });
 
-/* Connections between consecutive layers (not full mesh — sparse) */
 const lineMaterial = new THREE.LineBasicMaterial({
   color: 0x38bdf8,
   transparent: true,
@@ -2435,7 +2493,6 @@ for (let l = 0; l < layers.length - 1; l++) {
   for (let i = 0; i < layers[l]; i++) {
     const fromNode = nodePositions[fromStart + i];
     for (let j = 0; j < layers[l + 1]; j++) {
-      // Sparse connections — only ~35% for visual clarity
       if (Math.random() > 0.38) continue;
 
       const toNode = nodePositions[toStart + j];
@@ -2458,7 +2515,6 @@ for (let l = 0; l < layers.length - 1; l++) {
   }
 }
 
-/* Subtle rotating outer ring of dots */
 const ringGroup = new THREE.Group();
 scene.add(ringGroup);
 const ringGeo = new THREE.SphereGeometry(0.06, 8, 8);
@@ -2476,7 +2532,6 @@ for (let i = 0; i < ringCount; i++) {
   ringGroup.add(dot);
 }
 
-/* Floating particles for depth */
 const particlesGeo = new THREE.BufferGeometry();
 const particleCount = 400;
 const particlePositions = new Float32Array(particleCount * 3);
@@ -2496,14 +2551,12 @@ const particlesMat = new THREE.PointsMaterial({
 const particles = new THREE.Points(particlesGeo, particlesMat);
 scene.add(particles);
 
-/* ----- Animation Loop ----- */
 const clock = new THREE.Clock();
 let targetRotY = 0;
 let targetRotX = 0;
 let currentRotY = 0;
 let currentRotX = 0;
 
-/* Mouse parallax */
 window.addEventListener('mousemove', (e) => {
   const nx = (e.clientX / window.innerWidth) * 2 - 1;
   const ny = (e.clientY / window.innerHeight) * 2 - 1;
@@ -2511,7 +2564,6 @@ window.addEventListener('mousemove', (e) => {
   targetRotX = ny * 0.2;
 });
 
-/* Scroll influence */
 let scrollFactor = 0;
 window.addEventListener('scroll', () => {
   scrollFactor = Math.min(window.scrollY / window.innerHeight, 1.5);
@@ -2522,7 +2574,6 @@ function animate() {
 
   const t = clock.getElapsedTime();
 
-  /* Continuous rotation of whole network */
   currentRotY += (targetRotY - currentRotY) * 0.05;
   currentRotX += (targetRotX - currentRotX) * 0.05;
 
@@ -2531,23 +2582,19 @@ function animate() {
   networkGroup.position.y = Math.sin(t * 0.5) * 0.2 - scrollFactor * 2;
   networkGroup.position.x = 2 + Math.sin(t * 0.15) * 0.4;
 
-  /* Pulse nodes */
   nodeMeshes.forEach(m => {
     const s = 1 + Math.sin(t * m.userData.speed + m.userData.phase) * 0.28;
     m.scale.setScalar(s);
     m.material.opacity = 0.7 + Math.sin(t * m.userData.speed + m.userData.phase) * 0.28;
   });
 
-  /* Flicker connections */
   connectionLines.forEach(l => {
     l.material.opacity = l.userData.opacityBase * (0.6 + Math.sin(t * l.userData.speed + l.userData.phase) * 0.5);
   });
 
-  /* Rotate ring */
   ringGroup.rotation.y = -t * 0.12;
   ringGroup.rotation.z = Math.sin(t * 0.1) * 0.15;
 
-  /* Drift particles */
   particles.rotation.y = t * 0.02;
   particles.rotation.x = Math.sin(t * 0.05) * 0.1;
 
@@ -2555,7 +2602,6 @@ function animate() {
 }
 animate();
 
-/* ----- Resize ----- */
 let resizeTimeout;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimeout);
