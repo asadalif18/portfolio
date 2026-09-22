@@ -1,0 +1,2653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asad Ali — Senior AI/ML, Computer Vision & LLM Engineer</title>
+
+<meta name="description" content="Asad Ali — Senior AI/ML, Computer Vision & LLM Engineer building production-grade vision systems, AI agents, MCP servers, RAG pipelines, and voice AI for global clients." />
+<meta name="author" content="Asad Ali" />
+<meta name="keywords" content="AI Engineer, Computer Vision, LLM Engineer, AI Agents, MCP, LangGraph, CrewAI, YOLOv12, SAM 2, GPT-4.1, Claude 3.7, Llama 4, RAG, STT, TTS, Edge AI, Jetson Orin, TensorRT, Python, FastAPI" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --bg:#04060d;
+  --bg-soft:#080c17;
+  --card:#0c1322;
+  --card-hi:#121b30;
+  --line:rgba(148,163,184,.12);
+  --line-strong:rgba(148,163,184,.22);
+  --line-accent:rgba(34,211,238,.45);
+  --txt:#eef3fc;
+  --txt-soft:#c8d3e4;
+  --muted:#8896b0;
+  --dim:#57657e;
+  --cyan:#22d3ee;
+  --sky:#38bdf8;
+  --violet:#a78bfa;
+  --indigo:#818cf8;
+  --emerald:#34d399;
+  --amber:#fbbf24;
+  --rose:#fb7185;
+  --grad-primary:linear-gradient(135deg,#22d3ee 0%,#818cf8 55%,#a78bfa 100%);
+  --grad-alt:linear-gradient(135deg,#34d399 0%,#22d3ee 50%,#818cf8 100%);
+  --grad-soft:linear-gradient(135deg,rgba(34,211,238,.14),rgba(167,139,250,.10));
+  --radius:18px;
+  --radius-sm:12px;
+  --maxw:1200px;
+  --shadow-lg:0 30px 70px -25px rgba(0,0,0,.85);
+  --shadow-md:0 14px 40px -16px rgba(0,0,0,.65);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:rgba(34,211,238,.3);color:#fff}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:#04060d}
+::-webkit-scrollbar-thumb{background:#1c2740;border-radius:10px;border:2px solid #04060d}
+::-webkit-scrollbar-thumb:hover{background:#2b3b5e}
+
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+section{padding:118px 0;position:relative}
+
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:"";width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan))}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::after{content:"";width:36px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+
+h2.section-title{
+  font-size:clamp(1.9rem,4.4vw,2.9rem);
+  font-weight:800;letter-spacing:-.032em;line-height:1.14;margin-bottom:20px;
+}
+h2.section-title .grad{
+  background:var(--grad-primary);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.section-sub{color:var(--muted);max-width:700px;font-size:1.02rem;margin-bottom:60px;line-height:1.75}
+
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  transition:background .4s ease,border-color .4s ease,backdrop-filter .4s ease;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:rgba(4,6,13,.82);
+  backdrop-filter:blur(20px) saturate(1.4);
+  -webkit-backdrop-filter:blur(20px) saturate(1.4);
+  border-bottom-color:var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:var(--grad-primary);
+  display:grid;place-items:center;
+  font-size:.86rem;font-weight:900;color:#04060d;
+  box-shadow:0 0 26px -4px rgba(34,211,238,.7);
+  position:relative;
+}
+.logo-mark::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:var(--grad-primary);filter:blur(10px);opacity:.6;z-index:-1;
+}
+.logo-text{display:flex;flex-direction:column;line-height:1.15}
+.logo-text small{
+  font-size:.63rem;color:var(--muted);font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{
+  font-size:.87rem;font-weight:500;color:var(--muted);
+  padding:9px 14px;border-radius:9px;
+  transition:color .2s ease,background .2s ease;
+}
+.nav-links a:hover{color:var(--txt);background:rgba(148,163,184,.07)}
+.nav-links a.active{color:var(--cyan)}
+.nav-cta{
+  margin-left:10px;padding:10px 20px !important;
+  border:1px solid var(--line-accent);border-radius:11px;
+  color:var(--cyan) !important;font-weight:600;
+  background:rgba(34,211,238,.06);
+  transition:background .25s ease,transform .2s ease !important;
+}
+.nav-cta:hover{background:rgba(34,211,238,.14) !important;transform:translateY(-1px)}
+
+.burger{
+  display:none;width:42px;height:42px;border-radius:10px;
+  border:1px solid var(--line);background:rgba(148,163,184,.04);
+  flex-direction:column;justify-content:center;align-items:center;gap:5px;
+}
+.burger span{width:18px;height:2px;background:var(--txt);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:140px 0 90px;position:relative;overflow:hidden;
+}
+#three-canvas{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(140px);opacity:.28}
+.blob-1{width:700px;height:700px;background:#0891b2;top:-240px;right:-220px;animation:float1 20s ease-in-out infinite}
+.blob-2{width:580px;height:580px;background:#7c3aed;bottom:-260px;left:-200px;animation:float2 24s ease-in-out infinite}
+.blob-3{width:420px;height:420px;background:#4f46e5;top:35%;left:40%;animation:float1 28s ease-in-out infinite reverse;opacity:.14}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-50px) scale(1.1)}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,40px) scale(1.08)}}
+
+.grid-overlay{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(148,163,184,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(148,163,184,.045) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 85% 65% at 50% 40%,#000 25%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 85% 65% at 50% 40%,#000 25%,transparent 100%);
+}
+
+/* Floating tech chunks in hero */
+.chunks-layer{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.chunk{
+  position:absolute;
+  background:rgba(12,19,34,.65);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(34,211,238,.22);
+  border-radius:12px;
+  padding:10px 14px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;font-weight:500;
+  color:var(--txt-soft);
+  letter-spacing:.04em;
+  display:flex;align-items:center;gap:8px;
+  box-shadow:0 8px 30px -10px rgba(0,0,0,.6),0 0 24px -8px rgba(34,211,238,.25);
+  opacity:0;
+  animation:chunkFloat 14s ease-in-out infinite;
+}
+.chunk .dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 8px rgba(34,211,238,.8);
+  flex-shrink:0;
+  animation:pulseDot 2s ease-in-out infinite;
+}
+.chunk.violet{border-color:rgba(167,139,250,.28)}
+.chunk.violet .dot{background:var(--violet);box-shadow:0 0 8px rgba(167,139,250,.8)}
+.chunk.emerald{border-color:rgba(52,211,153,.28)}
+.chunk.emerald .dot{background:var(--emerald);box-shadow:0 0 8px rgba(52,211,153,.8)}
+.chunk.amber{border-color:rgba(251,191,36,.28)}
+.chunk.amber .dot{background:var(--amber);box-shadow:0 0 8px rgba(251,191,36,.8)}
+
+@keyframes pulseDot{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes chunkFloat{
+  0%,100%{opacity:0;transform:translate(0,0) scale(.9)}
+  10%{opacity:.85;transform:translate(0,-10px) scale(1)}
+  45%{opacity:.85;transform:translate(20px,-40px) scale(1)}
+  55%{opacity:.85;transform:translate(20px,-45px) scale(1)}
+  90%{opacity:.85;transform:translate(0,-15px) scale(1)}
+  100%{opacity:0;transform:translate(0,0) scale(.9)}
+}
+
+.chunk.c1{top:18%;left:3%;animation-delay:0s}
+.chunk.c2{top:32%;right:6%;animation-delay:1.5s}
+.chunk.c3{top:55%;left:6%;animation-delay:3s}
+.chunk.c4{top:72%;right:10%;animation-delay:4.5s}
+.chunk.c5{top:12%;right:22%;animation-delay:2.2s}
+.chunk.c6{top:82%;left:14%;animation-delay:5.5s}
+.chunk.c7{top:42%;left:44%;animation-delay:6.5s}
+.chunk.c8{top:68%;right:44%;animation-delay:7.5s}
+
+.hero-inner{position:relative;z-index:2;max-width:920px}
+
+.hero h1{
+  font-size:clamp(2.4rem,6vw,4rem);
+  font-weight:900;letter-spacing:-.042em;line-height:1.05;
+  margin-bottom:22px;
+}
+.hero h1 .grad{
+  background:var(--grad-primary);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero h1 .grad-alt{
+  background:var(--grad-alt);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.badge{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;font-weight:500;letter-spacing:.08em;
+  padding:6px 12px;border-radius:100px;
+  background:rgba(34,211,238,.07);
+  border:1px solid rgba(34,211,238,.25);
+  color:#67e8f9;
+}
+.badge.violet{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.28);color:#c4b5fd}
+.badge.emerald{background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.26);color:#6ee7b7}
+.badge.amber{background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.26);color:#fcd34d}
+
+.role-line{
+  font-family:'JetBrains Mono',monospace;
+  font-size:clamp(1rem,2.5vw,1.28rem);
+  color:var(--txt-soft);margin-bottom:28px;
+  min-height:1.9em;
+}
+.role-line .prompt{color:var(--cyan);margin-right:8px}
+.caret{
+  display:inline-block;width:9px;height:1.05em;
+  background:var(--cyan);vertical-align:-3px;margin-left:3px;
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink{50%{opacity:0}}
+
+.hero .lead{
+  font-size:1.08rem;color:var(--muted);max-width:720px;
+  margin-bottom:40px;line-height:1.8;
+}
+.hero .lead strong{color:var(--txt-soft);font-weight:600}
+.hero .lead .hl{color:var(--cyan);font-weight:600}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 28px;border-radius:12px;
+  font-size:.9rem;font-weight:600;letter-spacing:-.005em;
+  transition:transform .22s ease,box-shadow .28s ease,background .25s ease,border-color .25s ease;
+  border:1px solid transparent;white-space:nowrap;cursor:pointer;
+}
+.btn svg{width:17px;height:17px;flex-shrink:0}
+.btn-primary{
+  background:var(--grad-primary);color:#04060d;
+  box-shadow:0 12px 34px -12px rgba(34,211,238,.75);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 42px -12px rgba(34,211,238,.9)}
+.btn-ghost{
+  border-color:var(--line-strong);color:var(--txt);
+  background:rgba(148,163,184,.04);
+}
+.btn-ghost:hover{
+  transform:translateY(-3px);border-color:var(--line-accent);
+  background:rgba(34,211,238,.08);
+}
+
+.metrics-strip{
+  position:relative;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.metric{
+  background:linear-gradient(160deg,rgba(12,19,34,.85),rgba(8,12,23,.85));
+  padding:28px 22px;text-align:left;
+  transition:background .35s ease;position:relative;overflow:hidden;
+}
+.metric::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--grad-primary);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease;
+}
+.metric:hover::before{transform:scaleX(1)}
+.metric:hover{background:linear-gradient(160deg,rgba(18,27,48,.95),rgba(12,19,34,.95))}
+.metric-num{
+  font-size:1.95rem;font-weight:800;letter-spacing:-.035em;line-height:1.1;
+  background:var(--grad-primary);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.metric-label{
+  font-size:.71rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.12em;font-weight:500;margin-top:8px;
+}
+.metric-sub{font-size:.75rem;color:var(--dim);margin-top:3px}
+
+/* CLIENTS */
+.clients{
+  padding:56px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(8,12,23,.5),rgba(4,6,13,.5));
+}
+.clients-label{
+  text-align:center;font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:34px;
+}
+.clients-row{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:20px 44px;
+}
+.client-logo{
+  display:flex;align-items:center;gap:11px;
+  opacity:.72;transition:opacity .3s ease,transform .3s ease;
+  font-weight:700;font-size:.92rem;letter-spacing:-.01em;
+  color:var(--txt-soft);
+}
+.client-logo:hover{opacity:1;transform:translateY(-2px)}
+.client-logo .flag{
+  width:22px;height:22px;border-radius:6px;
+  display:grid;place-items:center;font-size:.75rem;
+  background:rgba(148,163,184,.1);border:1px solid var(--line);flex-shrink:0;
+}
+.client-logo small{
+  display:block;font-size:.62rem;font-weight:500;
+  color:var(--dim);letter-spacing:.06em;text-transform:uppercase;
+}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.service{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 28px;position:relative;overflow:hidden;
+  transition:transform .35s ease,border-color .35s ease,background .35s ease,box-shadow .35s ease;
+}
+.service::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad-primary);transform:scaleX(0);transform-origin:left;
+  transition:transform .45s ease;
+}
+.service:hover{
+  transform:translateY(-6px);border-color:var(--line-accent);
+  background:var(--card-hi);box-shadow:var(--shadow-md);
+}
+.service:hover::before{transform:scaleX(1)}
+.service-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:var(--grad-soft);border:1px solid rgba(34,211,238,.22);
+  display:grid;place-items:center;margin-bottom:22px;
+}
+.service-icon svg{width:24px;height:24px;color:var(--cyan)}
+.service h3{font-size:1.08rem;font-weight:700;margin-bottom:12px;letter-spacing:-.015em}
+.service p{font-size:.9rem;color:var(--muted);margin-bottom:18px;line-height:1.7}
+.service ul{display:flex;flex-direction:column;gap:7px}
+.service li{font-size:.83rem;color:var(--txt-soft);padding-left:18px;position:relative}
+.service li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 8px rgba(34,211,238,.7);
+}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start}
+.about-text p{color:var(--muted);margin-bottom:20px;font-size:1.01rem;line-height:1.8}
+.about-text strong{color:var(--txt-soft);font-weight:600}
+.about-text .highlight{
+  color:var(--txt);font-weight:600;
+  background:linear-gradient(90deg,rgba(34,211,238,.16),rgba(167,139,250,.13));
+  padding:2px 7px;border-radius:5px;
+}
+.about-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.highlight-item{
+  background:rgba(12,19,34,.7);border:1px solid var(--line);border-radius:12px;
+  padding:16px;transition:border-color .3s ease,background .3s ease;
+}
+.highlight-item:hover{border-color:var(--line-accent);background:var(--card-hi)}
+.highlight-item .num{
+  font-size:1.3rem;font-weight:800;letter-spacing:-.02em;
+  background:var(--grad-primary);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.highlight-item .lbl{font-size:.76rem;color:var(--muted);margin-top:3px}
+
+.info-card{
+  background:linear-gradient(165deg,var(--card-hi),var(--card));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px;box-shadow:var(--shadow-lg);
+  position:sticky;top:100px;
+}
+.info-card h3{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--cyan);font-weight:600;margin-bottom:20px;
+}
+.info-row{
+  display:flex;align-items:flex-start;gap:13px;
+  padding:13px 0;border-bottom:1px dashed rgba(148,163,184,.12);
+  font-size:.88rem;
+}
+.info-row:last-child{border-bottom:none;padding-bottom:0}
+.info-row svg{width:17px;height:17px;color:var(--cyan);flex-shrink:0;margin-top:4px}
+.info-row .k{color:var(--muted);min-width:82px;font-size:.82rem;font-weight:500}
+.info-row .v{color:var(--txt);font-weight:500;word-break:break-word}
+.info-row a:hover{color:var(--cyan)}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:38px}
+.timeline::before{
+  content:"";position:absolute;left:8px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(180deg,var(--cyan) 0%,var(--indigo) 45%,var(--violet) 80%,transparent 100%);
+  opacity:.5;border-radius:2px;
+}
+.tl-item{position:relative;margin-bottom:24px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:-38px;top:30px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--cyan);
+  box-shadow:0 0 0 5px rgba(34,211,238,.09);
+  transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease;z-index:1;
+}
+.tl-item:hover::before{
+  border-color:var(--violet);box-shadow:0 0 0 7px rgba(167,139,250,.16);
+  transform:scale(1.1);
+}
+.tl-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 28px;
+  transition:transform .35s ease,border-color .35s ease,background .35s ease,box-shadow .35s ease;
+}
+.tl-card:hover{
+  transform:translateX(8px);border-color:var(--line-accent);
+  background:var(--card-hi);box-shadow:var(--shadow-md);
+}
+.tl-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:18px;flex-wrap:wrap;margin-bottom:6px;
+}
+.tl-head h3{font-size:1.1rem;font-weight:700;letter-spacing:-.018em}
+.tl-date{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;
+  color:var(--cyan);background:rgba(34,211,238,.08);
+  border:1px solid rgba(34,211,238,.22);
+  padding:4px 12px;border-radius:100px;white-space:nowrap;
+}
+.tl-company{
+  font-size:.87rem;color:var(--violet);font-weight:500;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.tl-company .location{color:var(--dim);font-size:.8rem}
+.tl-card ul{display:flex;flex-direction:column;gap:9px}
+.tl-card li{
+  position:relative;padding-left:20px;
+  font-size:.89rem;color:var(--muted);line-height:1.65;
+}
+.tl-card li::before{
+  content:"";position:absolute;left:0;top:10px;
+  width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:.8;
+}
+.tl-card li strong{color:var(--txt-soft);font-weight:600}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:26px}
+.project-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .38s ease,border-color .38s ease,box-shadow .38s ease;
+}
+.project-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad-primary);transform:scaleX(0);transform-origin:left;
+  transition:transform .5s ease;
+}
+.project-card:hover{transform:translateY(-8px);border-color:var(--line-accent);box-shadow:var(--shadow-lg)}
+.project-card:hover::before{transform:scaleX(1)}
+
+.project-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:14px;margin-bottom:18px;
+}
+.project-icon{
+  width:48px;height:48px;border-radius:13px;flex-shrink:0;
+  background:var(--grad-soft);border:1px solid rgba(34,211,238,.22);
+  display:grid;place-items:center;
+}
+.project-icon svg{width:23px;height:23px;color:var(--cyan)}
+.project-domain{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  padding:5px 10px;border-radius:6px;
+  background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.24);
+  color:#c4b5fd;white-space:nowrap;
+}
+.project-card h3{font-size:1.08rem;font-weight:700;margin-bottom:10px;letter-spacing:-.015em;line-height:1.4}
+.project-card > p{font-size:.89rem;color:var(--muted);margin-bottom:18px;line-height:1.7;flex-grow:1}
+.project-impact{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.impact-chip{
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:500;
+  padding:5px 10px;border-radius:6px;
+  background:rgba(52,211,153,.09);border:1px solid rgba(52,211,153,.24);
+  color:#6ee7b7;
+}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.tag{
+  font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:500;
+  padding:4px 9px;border-radius:5px;
+  background:rgba(148,163,184,.07);border:1px solid var(--line);
+  color:var(--txt-soft);
+}
+.project-link{
+  font-size:.85rem;font-weight:600;color:var(--cyan);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:gap .25s ease;margin-top:auto;
+}
+.project-link:hover{gap:13px}
+.project-link svg{width:14px;height:14px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
+.skill-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;transition:border-color .3s ease,background .3s ease,transform .3s ease;
+}
+.skill-card:hover{border-color:var(--line-accent);background:var(--card-hi);transform:translateY(-4px)}
+.skill-head{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.skill-head svg{width:18px;height:18px;color:var(--cyan);flex-shrink:0}
+.skill-head h3{font-size:.95rem;font-weight:700;letter-spacing:-.01em}
+.skill-head .level{
+  margin-left:auto;font-family:'JetBrains Mono',monospace;
+  font-size:.63rem;color:var(--emerald);font-weight:500;
+  padding:3px 8px;border-radius:5px;
+  background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);
+  letter-spacing:.05em;
+}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{
+  font-size:.755rem;font-weight:500;
+  padding:5px 11px;border-radius:7px;
+  background:rgba(148,163,184,.06);border:1px solid var(--line);
+  color:var(--txt-soft);
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.chip:hover{background:rgba(34,211,238,.1);color:var(--cyan);border-color:rgba(34,211,238,.3)}
+.chip.hi{
+  background:rgba(34,211,238,.09);border-color:rgba(34,211,238,.25);
+  color:#67e8f9;font-weight:600;
+}
+
+/* TESTIMONIALS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+.testimonial{
+  background:linear-gradient(155deg,var(--card-hi),var(--card));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;position:relative;overflow:hidden;
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+  display:flex;flex-direction:column;
+}
+.testimonial:hover{transform:translateY(-5px);border-color:var(--line-accent);box-shadow:var(--shadow-md)}
+.testimonial::before{
+  content:"“";position:absolute;top:-10px;right:18px;
+  font-size:8rem;font-family:Georgia,serif;font-weight:700;
+  color:rgba(34,211,238,.08);line-height:1;pointer-events:none;
+}
+.stars{display:flex;gap:3px;margin-bottom:16px}
+.stars svg{width:15px;height:15px;color:var(--amber);fill:var(--amber)}
+.testimonial p{
+  font-size:.92rem;color:var(--txt-soft);line-height:1.75;
+  margin-bottom:22px;font-style:italic;flex-grow:1;position:relative;z-index:1;
+}
+.testimonial-author{
+  display:flex;align-items:center;gap:13px;
+  padding-top:20px;border-top:1px solid var(--line);position:relative;z-index:1;
+}
+.author-avatar{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  background:var(--grad-primary);
+  display:grid;place-items:center;
+  font-weight:800;font-size:.9rem;color:#04060d;
+}
+.author-info{line-height:1.35}
+.author-info strong{display:block;font-size:.87rem;font-weight:700}
+.author-info span{font-size:.76rem;color:var(--muted)}
+.author-flag{
+  margin-left:auto;font-size:.68rem;
+  font-family:'JetBrains Mono',monospace;
+  color:var(--dim);letter-spacing:.08em;
+  display:flex;align-items:center;gap:5px;
+}
+
+/* CERTIFICATIONS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.cert{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px;display:flex;gap:14px;align-items:flex-start;
+  transition:border-color .3s ease,transform .3s ease,background .3s ease;
+}
+.cert:hover{border-color:var(--line-accent);transform:translateY(-3px);background:var(--card-hi)}
+.cert-badge{
+  width:40px;height:40px;border-radius:10px;flex-shrink:0;
+  display:grid;place-items:center;
+  background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.24);
+}
+.cert-badge svg{width:18px;height:18px;color:var(--violet)}
+.cert-info h4{font-size:.87rem;font-weight:600;line-height:1.45;margin-bottom:6px}
+.cert-info .meta{font-size:.73rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.cert-info .meta-link{
+  font-size:.73rem;color:var(--cyan);font-weight:500;
+  display:inline-block;margin-top:7px;
+}
+.cert-info .meta-link:hover{text-decoration:underline}
+
+/* AWARDS */
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.award{
+  background:linear-gradient(155deg,var(--card-hi),var(--card));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;position:relative;overflow:hidden;
+  transition:transform .35s ease,border-color .35s ease;
+}
+.award:hover{transform:translateY(-6px);border-color:rgba(251,191,36,.36)}
+.award::before{
+  content:"";position:absolute;top:-50px;right:-50px;
+  width:150px;height:150px;border-radius:50%;
+  background:rgba(251,191,36,.09);filter:blur(30px);
+}
+.award .year{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  color:var(--amber);letter-spacing:.14em;font-weight:600;margin-bottom:14px;position:relative;
+}
+.award h4{font-size:1rem;font-weight:700;margin-bottom:9px;position:relative;line-height:1.4}
+.award .issuer{font-size:.8rem;color:var(--violet);font-weight:500;margin-bottom:12px;position:relative}
+.award p{font-size:.86rem;color:var(--muted);position:relative;line-height:1.7}
+
+/* CONTACT */
+.contact-wrap{
+  background:linear-gradient(150deg,rgba(34,211,238,.08),rgba(167,139,250,.06));
+  border:1px solid var(--line-accent);border-radius:28px;
+  padding:76px 56px;text-align:center;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.contact-wrap::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(148,163,184,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(148,163,184,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at center,#000,transparent 72%);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000,transparent 72%);
+  pointer-events:none;
+}
+.contact-wrap > *{position:relative}
+.contact-wrap h2{
+  font-size:clamp(1.7rem,4.2vw,2.5rem);font-weight:800;
+  letter-spacing:-.028em;margin-bottom:16px;line-height:1.15;
+}
+.contact-wrap > p{color:var(--muted);max-width:620px;margin:0 auto 38px;font-size:1.02rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:38px}
+.contact-item{
+  display:flex;align-items:center;gap:11px;
+  background:rgba(4,6,13,.6);border:1px solid var(--line);
+  padding:14px 22px;border-radius:13px;
+  font-size:.87rem;font-weight:500;
+  transition:border-color .3s ease,transform .3s ease,background .3s ease;
+}
+.contact-item:hover{
+  border-color:var(--line-accent);transform:translateY(-3px);
+  background:rgba(34,211,238,.08);
+}
+.contact-item svg{width:17px;height:17px;color:var(--cyan);flex-shrink:0}
+.contact-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--line);
+  padding:38px 0;font-size:.83rem;color:var(--muted);
+  background:rgba(4,6,13,.6);
+}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer-links a{transition:color .2s ease}
+.footer-links a:hover{color:var(--cyan)}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-brand .logo-mark{width:30px;height:30px;font-size:.7rem;border-radius:8px}
+
+/* REVEAL */
+.reveal{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);
+}
+.reveal.in{opacity:1;transform:none}
+
+/* BACK TO TOP */
+.to-top{
+  position:fixed;right:24px;bottom:24px;z-index:900;
+  width:46px;height:46px;border-radius:13px;
+  background:var(--card);border:1px solid var(--line-strong);
+  display:grid;place-items:center;
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:.32s ease;color:var(--cyan);box-shadow:var(--shadow-md);
+}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{border-color:var(--line-accent);background:var(--card-hi)}
+.to-top svg{width:19px;height:19px}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .info-card{position:static}
+}
+@media (max-width:900px){
+  .metrics-strip{grid-template-columns:repeat(2,1fr)}
+  .chunk{display:none}
+}
+@media (max-width:820px){
+  section{padding:88px 0}
+  .burger{display:flex}
+  .nav-links{
+    position:fixed;top:74px;left:0;right:0;
+    background:rgba(4,6,13,.98);
+    backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+    flex-direction:column;align-items:stretch;gap:0;
+    padding:14px 28px 30px;
+    border-bottom:1px solid var(--line);
+    transform:translateY(-150%);
+    transition:transform .42s cubic-bezier(.22,1,.36,1);
+    max-height:calc(100vh - 74px);overflow-y:auto;
+  }
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{padding:15px 6px;border-bottom:1px solid rgba(148,163,184,.07);border-radius:0}
+  .nav-cta{margin:18px 0 0;text-align:center;justify-content:center;border-radius:11px}
+  .hero{padding:122px 0 70px;min-height:auto}
+  .timeline{padding-left:30px}
+  .tl-item::before{left:-30px;width:14px;height:14px}
+  .tl-head{flex-direction:column;gap:9px}
+  .contact-wrap{padding:54px 28px;border-radius:22px}
+}
+@media (max-width:520px){
+  .container{padding:0 20px}
+  .metrics-strip{grid-template-columns:1fr 1fr}
+  .metric{padding:22px 18px}
+  .metric-num{font-size:1.5rem}
+  .hero-actions{flex-direction:column}
+  .btn{width:100%}
+  .about-highlights{grid-template-columns:1fr}
+  .clients-row{gap:16px 30px}
+  .contact-links{flex-direction:column;align-items:stretch}
+  .contact-item{justify-content:center}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="container nav">
+    <a href="#hero" class="logo">
+      <span class="logo-mark">AA</span>
+      <span class="logo-text">
+        Asad Ali
+        <small>AI · CV · LLMs · Python</small>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Stack</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- 3D Neural Network Canvas -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Floating tech chunks -->
+  <div class="chunks-layer" aria-hidden="true">
+    <div class="chunk c1"><span class="dot"></span>YOLOv12 · detect</div>
+    <div class="chunk violet c2"><span class="dot"></span>LangGraph · agent</div>
+    <div class="chunk emerald c3"><span class="dot"></span>MCP · tool call</div>
+    <div class="chunk amber c4"><span class="dot"></span>Whisper · stream</div>
+    <div class="chunk c5"><span class="dot"></span>SAM 2.1 · segment</div>
+    <div class="chunk violet c6"><span class="dot"></span>GPT-4.1 · reason</div>
+    <div class="chunk emerald c7"><span class="dot"></span>TensorRT · infer</div>
+    <div class="chunk amber c8"><span class="dot"></span>ElevenLabs · TTS</div>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="badges">
+        <span class="badge">Computer Vision</span>
+        <span class="badge violet">LLM Agents</span>
+        <span class="badge emerald">MCP Servers</span>
+        <span class="badge amber">STT / TTS</span>
+        <span class="badge">Edge AI</span>
+      </div>
+
+      <h1>
+        AI, Computer Vision &amp;<br />
+        <span class="grad">LLM Systems</span> —<br />
+        <span class="grad-alt">Engineered for Production.</span>
+      </h1>
+
+      <div class="role-line">
+        <span class="prompt">&gt;</span><span id="role"></span><span class="caret"></span>
+      </div>
+
+      <p class="lead">
+        I'm <strong>Asad Ali</strong> — a Senior AI/ML, Computer Vision &amp; LLM Engineer with
+        <strong>6+ years</strong> architecting production-grade intelligent systems for
+        <span class="hl">US, UK, EU, UAE, AU &amp; CA clients</span>. I build across the modern AI stack —
+        <strong>vision models, LLM agents, MCP servers, RAG pipelines, voice AI (STT/TTS),
+        and edge-deployed neural networks</strong> — taking ideas from research to revenue.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          View Case Studies
+        </a>
+        <a href="mailto:asadalif18@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20AI%20Engagement" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Book a Call
+        </a>
+      </div>
+
+      <div class="metrics-strip reveal">
+        <div class="metric">
+          <div class="metric-num">6+</div>
+          <div class="metric-label">Years in AI / ML / CV</div>
+          <div class="metric-sub">Production systems</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">150+</div>
+          <div class="metric-label">Models Trained &amp; Deployed</div>
+          <div class="metric-sub">Edge + Cloud + On-prem</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">45+</div>
+          <div class="metric-label">Global Clients Served</div>
+          <div class="metric-sub">US · UK · EU · UAE · AU · CA</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">99.7%</div>
+          <div class="metric-label">Peak Model Accuracy</div>
+          <div class="metric-sub">In live production</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS ============ -->
+<div class="clients">
+  <div class="container">
+    <div class="clients-label reveal">Trusted by teams building production AI</div>
+    <div class="clients-row reveal">
+      <div class="client-logo"><span class="flag">🇺🇸</span><span>RetailSense AI<small>United States</small></span></div>
+      <div class="client-logo"><span class="flag">🇬🇧</span><span>Voltedge Manufacturing<small>United Kingdom</small></span></div>
+      <div class="client-logo"><span class="flag">🇺🇸</span><span>MedScan Health<small>United States</small></span></div>
+      <div class="client-logo"><span class="flag">🇩🇪</span><span>Autobahn Logistics<small>Germany</small></span></div>
+      <div class="client-logo"><span class="flag">🇦🇪</span><span>Falcon Infrastructure<small>UAE</small></span></div>
+      <div class="client-logo"><span class="flag">🇦🇺</span><span>MineGuard Systems<small>Australia</small></span></div>
+      <div class="client-logo"><span class="flag">🇨🇦</span><span>NorthPeak Fintech<small>Canada</small></span></div>
+      <div class="client-logo"><span class="flag">🇸🇬</span><span>Straits Logistics<small>Singapore</small></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">What I Deliver</div>
+      <h2 class="section-title">End-to-end AI systems —<br />from <span class="grad">research to revenue</span>.</h2>
+      <p class="section-sub">
+        I don't just ship models. I ship measurable business outcomes — designed, trained,
+        optimized, and deployed across edge devices, cloud infrastructure, and agentic AI platforms.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Computer Vision Systems</h3>
+        <p>Production-grade detection, tracking, segmentation, OCR, and video analytics — optimized for accuracy and latency.</p>
+        <ul>
+          <li>Object detection, tracking &amp; segmentation</li>
+          <li>Vision LLMs &amp; multimodal reasoning</li>
+          <li>OCR &amp; document intelligence</li>
+          <li>Real-time video analytics &amp; edge inference</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>LLM Agents &amp; MCP Servers</h3>
+        <p>Autonomous multi-agent systems with tool use, memory, and MCP-based integrations that automate complex enterprise workflows.</p>
+        <ul>
+          <li>LangGraph / CrewAI / AutoGen agents</li>
+          <li>Model Context Protocol (MCP) servers</li>
+          <li>Tool calling &amp; function orchestration</li>
+          <li>Human-in-the-loop workflows</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></div>
+        <h3>Voice AI — STT / TTS</h3>
+        <p>Real-time voice assistants and conversational AI with low-latency streaming transcription and expressive synthesis.</p>
+        <ul>
+          <li>Whisper / Deepgram streaming STT</li>
+          <li>ElevenLabs / OpenAI realtime TTS</li>
+          <li>Voice agents with tool calling</li>
+          <li>Multilingual, low-latency pipelines</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+        <h3>Edge AI &amp; Deployment</h3>
+        <p>Getting large models and vision pipelines to run efficiently on NVIDIA Jetson, industrial cameras, and constrained hardware.</p>
+        <ul>
+          <li>TensorRT / TensorRT-LLM optimization</li>
+          <li>Jetson Orin / Xavier / Nano deployment</li>
+          <li>DeepStream &amp; RTSP video pipelines</li>
+          <li>Quantization, distillation, pruning</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>RAG &amp; Knowledge Systems</h3>
+        <p>Enterprise retrieval-augmented generation with hybrid search, reranking, and citation-grade accuracy over private data.</p>
+        <ul>
+          <li>Advanced RAG (GraphRAG, HyDE, RAPTOR)</li>
+          <li>Vector DBs + hybrid retrieval</li>
+          <li>Reranking &amp; evaluation pipelines</li>
+          <li>Multi-tenant, ACL-aware systems</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+        <h3>MLOps &amp; Cloud Pipelines</h3>
+        <p>Reproducible training, versioned models, monitoring, and automated retraining pipelines on AWS / GCP / Azure.</p>
+        <ul>
+          <li>MLflow, W&amp;B, DVC, Kubeflow</li>
+          <li>SageMaker, Vertex AI, Azure ML</li>
+          <li>Drift detection &amp; observability</li>
+          <li>CI/CD for ML &amp; LLM evaluation</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <h3>Python Backend &amp; APIs</h3>
+        <p>Scalable backend services that serve models and agents reliably to web, mobile, and enterprise systems.</p>
+        <ul>
+          <li>FastAPI / Django REST services</li>
+          <li>Inference APIs &amp; streaming endpoints</li>
+          <li>PostgreSQL, MongoDB, Redis</li>
+          <li>Docker, Kubernetes, CI/CD</li>
+        </ul>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Technical Leadership</h3>
+        <p>Leading cross-functional AI teams — architecting roadmaps, mentoring engineers, and delivering on time.</p>
+        <ul>
+          <li>AI/ML team leadership &amp; mentoring</li>
+          <li>Technical roadmap &amp; architecture</li>
+          <li>Research-to-production execution</li>
+          <li>Stakeholder alignment &amp; delivery</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">About Me</div>
+      <h2 class="section-title">Engineering intelligent systems that<br /><span class="grad">actually ship.</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a <strong>Senior AI/ML, Computer Vision &amp; LLM Engineer</strong> based in Islamabad, Pakistan,
+          working with <span class="highlight">US, UK, EU, UAE &amp; AU clients</span> to design, train, and
+          deploy production-grade intelligent systems. My work spans computer vision, deep learning,
+          generative AI, autonomous agents, and voice AI — always with an eye toward real-world performance,
+          latency, and business impact.
+        </p>
+        <p>
+          Over the past 6+ years, I've led AI teams and delivered systems that run in
+          <strong>retail stores, factory floors, hospitals, city command centers, call centers, and edge devices</strong>.
+          I work fluently across the modern AI stack — <span class="highlight">vision transformers, YOLO
+          family, SAM 2, diffusion models, GPT-4.1/o3, Claude 3.7, Gemini 2.5, Llama 4, MCP servers,
+          LangGraph agents, and RAG pipelines</span> — and I care deeply about the entire lifecycle,
+          not just the model.
+        </p>
+        <p>
+          My philosophy is simple: <span class="highlight">research that doesn't reach production isn't finished.</span>
+          I bridge the gap between notebooks and reliable, scalable software — combining strong fundamentals
+          in deep learning with senior-level Python backend engineering and cloud-native infrastructure.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-item"><div class="num">150+</div><div class="lbl">Models in production</div></div>
+          <div class="highlight-item"><div class="num">45+</div><div class="lbl">Global enterprise clients</div></div>
+          <div class="highlight-item"><div class="num">6+</div><div class="lbl">Years leading AI teams</div></div>
+          <div class="highlight-item"><div class="num">3×</div><div class="lbl">Award-winning projects</div></div>
+        </div>
+      </div>
+
+      <aside class="info-card reveal">
+        <h3>Profile Snapshot</h3>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="k">Based in</span><span class="v">Islamabad, Pakistan <span style="color:var(--dim)">(Remote-first · Global)</span></span>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="k">Clients in</span><span class="v">USA · UK · Germany · UAE · Australia · Canada</span>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span class="k">Email</span><span class="v"><a href="mailto:asadalif18@gmail.com">asadalif18@gmail.com</a></span>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="k">Phone</span><span class="v"><a href="tel:+923060122333">+92 306 0122333</a></span>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span class="k">GitHub</span><span class="v"><a href="https://github.com/asadalif18" target="_blank" rel="noopener">github.com/asadalif18</a></span>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span class="k">Education</span><span class="v">MS Artificial Intelligence, NUTECH</span>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <span class="k">Licence</span><span class="v">PEC Registered Engineer</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Career Timeline</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-sub">
+        A track record of leading AI teams, deploying production models, and delivering
+        enterprise-grade computer vision, LLM agents, MCP servers, voice AI, and Python backend systems.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>AI / CV / LLM Engineer</h3>
+            <span class="tl-date">Jan 2026 — Present</span>
+          </div>
+          <div class="tl-company">Freelance · Global Clients<span class="location"> · Islamabad, Pakistan (Remote)</span></div>
+          <ul>
+            <li>Delivering <strong>end-to-end AI systems</strong> — computer vision (detection, segmentation, OCR, video analytics) and <strong>LLM applications (agents, MCP servers, RAG, voice AI)</strong> — for clients across <strong>US, UK, EU &amp; UAE</strong>.</li>
+            <li>Building and fine-tuning <strong>vision models (YOLOv11/v12, RT-DETR, SAM 2, DINOv2), LLMs (Llama 4, Qwen 3, Mistral), and multimodal systems (GPT-4.1, Claude 3.7, Gemini 2.5)</strong> with a focus on accuracy, latency, and cost.</li>
+            <li>Owning the full lifecycle — data preparation, training, evaluation, deployment on edge/cloud, monitoring, and client integration.</li>
+            <li>Designing <strong>agentic workflows with LangGraph, CrewAI, and MCP tool calling</strong>, plus streaming <strong>STT/TTS pipelines</strong> for real-time voice assistants.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>Senior Lead AI Engineer</h3>
+            <span class="tl-date">Jun 2025 — Dec 2025</span>
+          </div>
+          <div class="tl-company">Integrated Robust Solution<span class="location"> · Islamabad, Pakistan</span></div>
+          <ul>
+            <li>Led design and delivery of <strong>enterprise-grade AI/ML solutions</strong> — custom chatbots, generative AI systems, AI automations, autonomous agents, and advanced computer vision applications.</li>
+            <li>Architected <strong>multi-agent systems with LangGraph and CrewAI</strong>, integrating <strong>MCP servers</strong> for secure tool use across CRM, ticketing, and internal data sources.</li>
+            <li>Managed and mentored a <strong>cross-functional AI/ML team</strong> — guiding research directions and ensuring timely, high-quality delivery.</li>
+            <li>Partnered with stakeholders to align AI initiatives with business goals, driving automation, innovation, and <strong>measurable organizational impact</strong>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>Senior AI/ML Research Associate</h3>
+            <span class="tl-date">Jan 2025 — Jun 2025</span>
+          </div>
+          <div class="tl-company">Frontier Works Organization (FWO)<span class="location"> · Islamabad, Pakistan</span></div>
+          <ul>
+            <li>Led AI/ML research in <strong>aerial infrastructure monitoring</strong> — developing advanced object detection and segmentation models with data augmentation and targeted training methodologies.</li>
+            <li>Improved model robustness and performance across diverse environmental and lighting conditions.</li>
+            <li>Directed deployment efforts and produced comprehensive strategic reports — <strong>upholding confidentiality and data integrity</strong>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>Software Engineer — AI/ML</h3>
+            <span class="tl-date">Mar 2024 — May 2025</span>
+          </div>
+          <div class="tl-company">Max Tech<span class="location"> · Islamabad, Pakistan</span></div>
+          <ul>
+            <li>Led development and deployment of AI/ML solutions, <strong>intelligent agents, custom chatbots</strong>, and computer vision applications.</li>
+            <li>Integrated advanced LLM functionality into existing systems, ensuring seamless cross-team implementation.</li>
+            <li>Optimized ML models and inference pipelines for performance and scalability — achieving <strong>significant gains in processing time and resource utilization</strong>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>AI &amp; Machine Learning Engineer</h3>
+            <span class="tl-date">Sep 2023 — Feb 2024</span>
+          </div>
+          <div class="tl-company">Centrox AI<span class="location"> · Islamabad, Pakistan</span></div>
+          <ul>
+            <li>Engineered custom chatbots and conversational assistants with <strong>advanced prompt engineering</strong> and <strong>GPU-accelerated fine-tuning (LoRA/QLoRA)</strong> for optimal performance.</li>
+            <li>Built seamless RAG pipelines with vector databases for retrieval-augmented generation over proprietary knowledge bases.</li>
+            <li>Led innovative computer vision projects using cutting-edge detection and recognition models.</li>
+            <li>Shipped intuitive front-end interfaces for non-technical operators.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>AI &amp; Machine Learning Intern</h3>
+            <span class="tl-date">Jun 2023 — Sep 2023</span>
+          </div>
+          <div class="tl-company">Safe City Capital Command and Control Center<span class="location"> · Islamabad, Pakistan</span></div>
+          <ul>
+            <li>Specialized in Computer Vision — building <strong>ANPR, Weapon Detection, and Fire Detection</strong> systems with custom-trained models.</li>
+            <li>Delivered user-friendly front-end interfaces for real-time operator use.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>Python Developer Intern</h3>
+            <span class="tl-date">Jun 2023 — Jul 2023</span>
+          </div>
+          <div class="tl-company">Codeaza Tech Pvt. Ltd<span class="location"> · Rawalpindi, Pakistan</span></div>
+          <ul>
+            <li>Specialized in <strong>web scraping and automation</strong>, developing efficient data acquisition pipelines.</li>
+            <li>Streamlined workflows across multiple projects, improving team productivity.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-head">
+            <h3>Computer Architecture Intern</h3>
+            <span class="tl-date">Jul 2021 — Sep 2021</span>
+          </div>
+          <div class="tl-company">National Electronics Complex of Pakistan (NECOP)<span class="location"> · Islamabad, Pakistan</span></div>
+          <ul>
+            <li>Contributed to <strong>"logic locking"</strong> — a hardware obfuscation technique for enhanced device security.</li>
+            <li>Led design and implementation, collaborating with engineers to integrate hardware with robust tamper resistance.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Selected Case Studies</div>
+      <h2 class="section-title">Projects &amp; <span class="grad">Client Impact</span></h2>
+      <p class="section-sub">
+        Production AI systems delivered across retail, manufacturing, healthcare, security,
+        infrastructure, fintech, and enterprise — spanning vision, LLM agents, MCP, RAG, and voice AI.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></div>
+          <span class="project-domain">🇺🇸 Voice AI</span>
+        </div>
+        <h3>Real-Time Voice Assistant with Agent Tooling</h3>
+        <p>
+          Sub-second latency voice agent for a US insurance provider — streaming STT (Whisper Turbo +
+          Deepgram), LLM reasoning (GPT-4.1), and expressive TTS (ElevenLabs). Integrated with
+          LangGraph agents and an MCP server to securely query policy data, book appointments, and escalate to humans.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">&lt; 700ms round-trip</span>
+          <span class="impact-chip">↓ 42% call handling time</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Whisper</span><span class="tag">Deepgram</span>
+          <span class="tag">ElevenLabs</span><span class="tag">LangGraph</span>
+          <span class="tag">MCP</span><span class="tag">FastAPI</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/></svg></div>
+          <span class="project-domain">🌐 Enterprise Agents</span>
+        </div>
+        <h3>Multi-Agent RAG Platform with MCP Tooling</h3>
+        <p>
+          Enterprise knowledge platform for a global consulting firm — LangGraph-orchestrated agents
+          with CrewAI sub-agents, advanced RAG (GraphRAG + RAPTOR), and an MCP server exposing
+          SharePoint, Confluence, and Jira tools. Includes reranking, citations, and per-user ACLs.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">↓ 45% research time</span>
+          <span class="impact-chip">80K+ docs indexed</span>
+        </div>
+        <div class="tags">
+          <span class="tag">LangGraph</span><span class="tag">CrewAI</span>
+          <span class="tag">MCP</span><span class="tag">GraphRAG</span>
+          <span class="tag">Cohere Rerank</span><span class="tag">Pinecone</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <span class="project-domain">🇺🇸 Retail</span>
+        </div>
+        <h3>Retail Shelf Intelligence Platform</h3>
+        <p>
+          Real-time shelf monitoring for a US grocery chain — detecting out-of-stock items, planogram
+          violations, and misplaced products using overhead cameras. Custom <strong>YOLOv11</strong> model
+          with SKU-level OCR (PaddleOCR v5) and a live analytics dashboard.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">↓ 34% stockouts</span>
+          <span class="impact-chip">↑ 21% on-shelf availability</span>
+        </div>
+        <div class="tags">
+          <span class="tag">YOLOv11</span><span class="tag">PaddleOCR v5</span>
+          <span class="tag">OpenCV</span><span class="tag">FastAPI</span><span class="tag">React</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4h16v16z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <span class="project-domain">🇬🇧 Manufacturing</span>
+        </div>
+        <h3>PCB Defect Detection — Quality Inspection</h3>
+        <p>
+          Automated optical inspection (AOI) system for a UK electronics manufacturer. Detects solder
+          bridges, missing components, and micro-cracks at production-line speed with edge inference
+          on <strong>NVIDIA Jetson Orin</strong> using TensorRT-optimized YOLOv12.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">99.5% accuracy</span>
+          <span class="impact-chip">140 FPS @ edge</span>
+          <span class="impact-chip">↓ 82% manual QC</span>
+        </div>
+        <div class="tags">
+          <span class="tag">YOLOv12</span><span class="tag">PyTorch</span>
+          <span class="tag">TensorRT</span><span class="tag">Jetson Orin</span><span class="tag">Docker</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <span class="project-domain">🇦🇺 Safety</span>
+        </div>
+        <h3>PPE Compliance Monitoring System</h3>
+        <p>
+          Multi-camera worker safety system for an Australian mining operator — detecting helmets,
+          hi-vis vests, harnesses, and unsafe-zone intrusions in real time. Uses <strong>RT-DETR</strong>
+          for high-accuracy detection and <strong>BoT-SORT</strong> for identity-stable tracking.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">↓ 63% safety incidents</span>
+          <span class="impact-chip">Multi-camera fusion</span>
+        </div>
+        <div class="tags">
+          <span class="tag">RT-DETR</span><span class="tag">BoT-SORT</span>
+          <span class="tag">DeepStream</span><span class="tag">RTSP</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <span class="project-domain">🇺🇸 Healthcare</span>
+        </div>
+        <h3>MedScan — Multimodal Diagnostic Assistant</h3>
+        <p>
+          Vision-LLM powered system assisting radiologists in chest X-ray triage. Combines
+          <strong>DINOv2 + EfficientNet-V2</strong> classifiers with a multimodal LLM (GPT-4.1 / MedGemma)
+          for report generation. Grad-CAM heatmaps and HIPAA-compliant AWS deployment.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">↑ 31% triage speed</span>
+          <span class="impact-chip">HIPAA-compliant</span>
+        </div>
+        <div class="tags">
+          <span class="tag">DINOv2</span><span class="tag">EfficientNet-V2</span>
+          <span class="tag">GPT-4.1</span><span class="tag">Grad-CAM</span><span class="tag">AWS SageMaker</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <span class="project-domain">🇦🇪 Smart City</span>
+        </div>
+        <h3>Smart City Traffic Analytics &amp; ANPR</h3>
+        <p>
+          City-scale vehicle recognition and traffic flow analytics deployed across a UAE municipality.
+          Uses <strong>YOLOv11</strong> + <strong>PaddleOCR v5</strong> for ANPR, plus a
+          <strong>Qwen2.5-VL</strong> fallback for hard cases. Real-time congestion heatmaps feed a command dashboard.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">99.1% ANPR accuracy</span>
+          <span class="impact-chip">60+ camera feeds</span>
+        </div>
+        <div class="tags">
+          <span class="tag">YOLOv11</span><span class="tag">PaddleOCR</span>
+          <span class="tag">Qwen2.5-VL</span><span class="tag">Kafka</span><span class="tag">PostgreSQL</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <span class="project-domain">🇬🇧 Fintech</span>
+        </div>
+        <h3>Document Intelligence &amp; KYC Pipeline</h3>
+        <p>
+          Automated document processing for a UK fintech — extracting structured data from passports,
+          utility bills, and invoices using <strong>Surya OCR + vision LLMs (Claude 3.7 Sonnet)</strong>
+          for layout understanding, with a human-in-the-loop review UI.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">↓ 87% manual review</span>
+          <span class="impact-chip">99.3% field accuracy</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Surya OCR</span><span class="tag">Claude 3.7</span>
+          <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <span class="project-domain">🇩🇪 Logistics</span>
+        </div>
+        <h3>Aerial Infrastructure Inspection (Drones)</h3>
+        <p>
+          Drone-based inspection system for a German logistics operator — detecting cracks, corrosion,
+          and structural anomalies on rooftops, bridges, and rail infrastructure using
+          <strong>SAM 2.1</strong> for segmentation and geo-tagged defect mapping.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">↓ 74% inspection cost</span>
+          <span class="impact-chip">Geo-tagged defects</span>
+        </div>
+        <div class="tags">
+          <span class="tag">SAM 2.1</span><span class="tag">YOLOv11</span>
+          <span class="tag">GDAL</span><span class="tag">FastAPI</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg></div>
+          <span class="project-domain">🌐 Security</span>
+        </div>
+        <h3>Intelligent Video Surveillance Suite</h3>
+        <p>
+          Unified video analytics platform — weapon detection, fire detection, intrusion detection,
+          and crowd density estimation — deployed on <strong>NVIDIA Jetson Orin</strong> for on-prem
+          security operations centers. Real-time alarms pushed via MQTT.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">Real-time alerts</span>
+          <span class="impact-chip">Edge-deployed · On-prem</span>
+        </div>
+        <div class="tags">
+          <span class="tag">YOLOv11</span><span class="tag">Jetson Orin</span>
+          <span class="tag">DeepStream</span><span class="tag">MQTT</span><span class="tag">Streamlit</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></div>
+          <span class="project-domain">🇨🇦 Fintech · LLM</span>
+        </div>
+        <h3>Autonomous Financial Research Agent</h3>
+        <p>
+          Multi-agent system for a Canadian fintech — <strong>CrewAI</strong> agents research filings,
+          earnings calls, and news, then produce structured analyst briefs. Powered by
+          <strong>GPT-4.1 / Claude 3.7</strong> with tools exposed via <strong>MCP</strong> and streaming
+          output to a React dashboard.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">↓ 68% analyst time</span>
+          <span class="impact-chip">Citation-backed reports</span>
+        </div>
+        <div class="tags">
+          <span class="tag">CrewAI</span><span class="tag">MCP</span>
+          <span class="tag">GPT-4.1</span><span class="tag">Claude 3.7</span><span class="tag">React</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span class="project-domain">🇸🇬 Enterprise · VLM</span>
+        </div>
+        <h3>Multimodal Chatbot for Ops Teams</h3>
+        <p>
+          Multimodal assistant for a Singapore logistics operator — understands screenshots, PDFs,
+          and voice notes. Built on <strong>Gemini 2.5 Flash + Qwen2.5-VL</strong> with
+          <strong>STT (Whisper) / TTS (ElevenLabs)</strong>, embedded in Slack and internal web portal.
+        </p>
+        <div class="project-impact">
+          <span class="impact-chip">Voice + vision in one</span>
+          <span class="impact-chip">↓ 55% ticket volume</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Gemini 2.5</span><span class="tag">Qwen2.5-VL</span>
+          <span class="tag">Whisper</span><span class="tag">ElevenLabs</span><span class="tag">FastAPI</span>
+        </div>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="project-link">
+          View Case Study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Technical Stack</div>
+      <h2 class="section-title">Skills &amp; <span class="grad">Tooling</span></h2>
+      <p class="section-sub">
+        A full-stack AI toolkit — from research and model training to edge deployment,
+        cloud infrastructure, agentic AI, and production backend engineering.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <h3>Core Languages</h3><span class="level">EXPERT</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">Python</span>
+          <span class="chip">JavaScript / TypeScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Bash / Shell</span>
+          <span class="chip">C++ (basics)</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>Computer Vision</h3><span class="level">EXPERT</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">YOLOv12</span>
+          <span class="chip hi">YOLOv11</span>
+          <span class="chip">YOLO-World</span>
+          <span class="chip hi">RT-DETR</span>
+          <span class="chip">D-FINE</span>
+          <span class="chip hi">GroundingDINO 1.5</span>
+          <span class="chip">DINOv2 / DINOv3</span>
+          <span class="chip hi">SAM 2.1</span>
+          <span class="chip">Detectron2</span>
+          <span class="chip">MMDetection</span>
+          <span class="chip">Mask R-CNN</span>
+          <span class="chip">BoT-SORT</span>
+          <span class="chip">ByteTrack</span>
+          <span class="chip">MediaPipe</span>
+          <span class="chip hi">PaddleOCR v5</span>
+          <span class="chip">Surya OCR</span>
+          <span class="chip">TrOCR</span>
+          <span class="chip">OpenCV</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+          <h3>Deep Learning Frameworks</h3><span class="level">EXPERT</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">PyTorch 2.x</span>
+          <span class="chip hi">TensorFlow / Keras 3</span>
+          <span class="chip hi">Hugging Face Transformers</span>
+          <span class="chip">Hugging Face TRL</span>
+          <span class="chip">Unsloth</span>
+          <span class="chip">Axolotl</span>
+          <span class="chip">Scikit-learn</span>
+          <span class="chip">ONNX</span>
+          <span class="chip">TensorRT</span>
+          <span class="chip">OpenVINO</span>
+          <span class="chip">vLLM</span>
+          <span class="chip">llama.cpp</span>
+          <span class="chip">Ollama</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>
+          <h3>LLMs &amp; Foundation Models</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">GPT-4.1 / GPT-4o</span>
+          <span class="chip">o3 / o4-mini</span>
+          <span class="chip hi">Claude 3.7 Sonnet</span>
+          <span class="chip hi">Gemini 2.5 Pro / Flash</span>
+          <span class="chip hi">Llama 4</span>
+          <span class="chip">Llama 3.3 70B</span>
+          <span class="chip">Qwen 3</span>
+          <span class="chip hi">DeepSeek V3 / R1</span>
+          <span class="chip">Mistral Large 2</span>
+          <span class="chip">Phi-4</span>
+          <span class="chip">Gemma 3</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+          <h3>Vision &amp; Multimodal LLMs</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip">GPT-4o Vision</span>
+          <span class="chip">Claude 3.7 Vision</span>
+          <span class="chip">Gemini 2.5 Vision</span>
+          <span class="chip hi">Qwen2.5-VL</span>
+          <span class="chip">InternVL 2.5</span>
+          <span class="chip">Llama 3.2 Vision</span>
+          <span class="chip">Florence-2</span>
+          <span class="chip">Molmo</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg>
+          <h3>Voice AI — STT / TTS</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">Whisper large-v3</span>
+          <span class="chip hi">Whisper Turbo</span>
+          <span class="chip">Deepgram Nova-3</span>
+          <span class="chip">AssemblyAI</span>
+          <span class="chip hi">ElevenLabs</span>
+          <span class="chip">OpenAI Realtime / TTS</span>
+          <span class="chip">Cartesia Sonic</span>
+          <span class="chip">Kokoro TTS</span>
+          <span class="chip">PlayHT</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
+          <h3>AI Agents &amp; MCP</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">Model Context Protocol (MCP)</span>
+          <span class="chip hi">LangGraph</span>
+          <span class="chip hi">LangChain</span>
+          <span class="chip">LlamaIndex Workflows</span>
+          <span class="chip hi">CrewAI</span>
+          <span class="chip">AutoGen</span>
+          <span class="chip">OpenAI Agents SDK</span>
+          <span class="chip">Claude Agent SDK</span>
+          <span class="chip">Pydantic AI</span>
+          <span class="chip">DSPy</span>
+          <span class="chip">Semantic Kernel</span>
+          <span class="chip">Agno</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <h3>RAG &amp; Retrieval</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">GraphRAG</span>
+          <span class="chip hi">RAPTOR</span>
+          <span class="chip">HyDE</span>
+          <span class="chip">Corrective RAG</span>
+          <span class="chip">Self-RAG</span>
+          <span class="chip">Hybrid Search</span>
+          <span class="chip hi">Cohere Rerank v3.5</span>
+          <span class="chip">BGE Reranker</span>
+          <span class="chip">RAGAS Evaluation</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <h3>Vector DBs &amp; Embeddings</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">Pinecone</span>
+          <span class="chip hi">Weaviate</span>
+          <span class="chip hi">Qdrant</span>
+          <span class="chip">Milvus</span>
+          <span class="chip">LanceDB</span>
+          <span class="chip">ChromaDB</span>
+          <span class="chip">FAISS</span>
+          <span class="chip">pgvector</span>
+          <span class="chip">MongoDB Atlas Vector</span>
+          <span class="chip">Turbopuffer</span>
+          <span class="chip hi">OpenAI text-embedding-3</span>
+          <span class="chip">Cohere Embed v4</span>
+          <span class="chip">Voyage AI</span>
+          <span class="chip">BGE-M3</span>
+          <span class="chip">Jina v3</span>
+          <span class="chip">Nomic Embed</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <h3>Fine-tuning &amp; Alignment</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">LoRA / QLoRA</span>
+          <span class="chip">DoRA</span>
+          <span class="chip">DPO</span>
+          <span class="chip">ORPO</span>
+          <span class="chip">SimPO</span>
+          <span class="chip">PEFT</span>
+          <span class="chip hi">Unsloth</span>
+          <span class="chip">Axolotl</span>
+          <span class="chip">Distillation</span>
+          <span class="chip">Quantization (INT8 / INT4)</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 12h16M12 4v16"/></svg>
+          <h3>Diffusion &amp; Generative Media</h3><span class="level">PROFICIENT</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">FLUX.1</span>
+          <span class="chip">Stable Diffusion 3.5</span>
+          <span class="chip">SDXL</span>
+          <span class="chip">ControlNet</span>
+          <span class="chip">Sora</span>
+          <span class="chip">Runway Gen-3</span>
+          <span class="chip">Kling</span>
+          <span class="chip">LTX-Video</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+          <h3>Edge AI &amp; Hardware</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">Jetson Orin Nano / NX / AGX</span>
+          <span class="chip">Jetson Xavier NX</span>
+          <span class="chip">Jetson Nano</span>
+          <span class="chip hi">NVIDIA CUDA</span>
+          <span class="chip hi">TensorRT</span>
+          <span class="chip hi">TensorRT-LLM</span>
+          <span class="chip">DeepStream</span>
+          <span class="chip">OAK-D / DepthAI</span>
+          <span class="chip">Intel RealSense</span>
+          <span class="chip">Azure Kinect</span>
+          <span class="chip">IP / Industrial Cameras</span>
+          <span class="chip">LiDAR</span>
+          <span class="chip">Hailo-8</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+          <h3>Backend &amp; APIs</h3><span class="level">EXPERT</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">FastAPI</span>
+          <span class="chip hi">Django / DRF</span>
+          <span class="chip">Flask</span>
+          <span class="chip">Litestar</span>
+          <span class="chip">RESTful APIs</span>
+          <span class="chip">GraphQL</span>
+          <span class="chip">WebSockets / SSE</span>
+          <span class="chip">Celery / Redis</span>
+          <span class="chip">Pytest / Unittest</span>
+          <span class="chip">Postman / Swagger</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          <h3>Cloud &amp; DevOps</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip">AWS (SageMaker, Bedrock, S3, Lambda)</span>
+          <span class="chip">GCP (Vertex AI, Gemini API)</span>
+          <span class="chip">Azure AI Foundry</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Kubernetes</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">GitLab CI</span>
+          <span class="chip">Jenkins</span>
+          <span class="chip">Terraform</span>
+          <span class="chip">Nginx</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6l3-3M12 8l-3-3"/><circle cx="12" cy="14" r="8"/></svg>
+          <h3>MLOps &amp; Observability</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip">MLflow</span>
+          <span class="chip">Weights &amp; Biases</span>
+          <span class="chip hi">LangSmith</span>
+          <span class="chip">LangFuse</span>
+          <span class="chip">DVC</span>
+          <span class="chip">Kubeflow</span>
+          <span class="chip">Airflow</span>
+          <span class="chip">Evidently AI</span>
+          <span class="chip">Prometheus / Grafana</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <h3>Data Engineering</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Redis</span>
+          <span class="chip">Pandas / Polars / NumPy</span>
+          <span class="chip">DuckDB</span>
+          <span class="chip">Beautiful Soup / Selenium</span>
+          <span class="chip">Matplotlib / Seaborn / Plotly</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6l3-3M12 8l-3-3"/><rect x="3" y="12" width="18" height="10" rx="2"/></svg>
+          <h3>Video &amp; Streaming</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip">FFmpeg</span>
+          <span class="chip">GStreamer</span>
+          <span class="chip">RTSP / RTMP</span>
+          <span class="chip">WebRTC</span>
+          <span class="chip hi">NVIDIA DeepStream</span>
+          <span class="chip">Kafka</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <h3>Frontend &amp; Prototyping</h3><span class="level">PROFICIENT</span>
+        </div>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">HTML5 / CSS3</span>
+          <span class="chip">Tailwind</span>
+          <span class="chip">Streamlit</span>
+          <span class="chip">Gradio</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <h3>Automation &amp; Workflow</h3><span class="level">ADVANCED</span>
+        </div>
+        <div class="chips">
+          <span class="chip hi">n8n</span>
+          <span class="chip">Zapier</span>
+          <span class="chip">Make</span>
+          <span class="chip hi">MCP Servers</span>
+          <span class="chip">AI Agents</span>
+          <span class="chip">RPA Integration</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3>Leadership &amp; Soft Skills</h3><span class="level">STRONG</span>
+        </div>
+        <div class="chips">
+          <span class="chip">Team Leadership</span>
+          <span class="chip">Technical Mentoring</span>
+          <span class="chip">Project Management</span>
+          <span class="chip">Client Communication</span>
+          <span class="chip">Research &amp; Development</span>
+          <span class="chip">Agile / Scrum</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Client Feedback</div>
+      <h2 class="section-title">What clients <span class="grad">say</span></h2>
+      <p class="section-sub">
+        A selection of feedback from US, UK, EU, UAE, AU, and international clients across
+        retail, manufacturing, healthcare, security, and enterprise AI.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Asad delivered our voice AI agent with sub-second latency — combining Whisper streaming, GPT-4.1, and MCP tooling into a single production pipeline. The execution quality was world-class."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info"><strong>Michael R.</strong><span>VP Engineering · Insurance (USA)</span></div>
+          <span class="author-flag">🇺🇸</span>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"We needed an AOI system that could run at line speed. Asad built a highly accurate YOLOv12 defect detector and optimized it with TensorRT to hit 140 FPS on a Jetson Orin."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SJ</div>
+          <div class="author-info"><strong>Sarah J.</strong><span>CTO · Electronics Manufacturing (UK)</span></div>
+          <span class="author-flag">🇬🇧</span>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Our KYC document pipeline was drowning in manual reviews. Asad designed a vision-LLM system using Surya OCR and Claude 3.7 that cut manual review by 87% while improving accuracy."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DT</div>
+          <div class="author-info"><strong>David T.</strong><span>Head of Engineering · Fintech (UK)</span></div>
+          <span class="author-flag">🇬🇧</span>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"We hired Asad to lead our computer vision initiative. He built and mentored the team, established our MLOps practices, and delivered a production safety monitoring system across three sites."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">LM</div>
+          <div class="author-info"><strong>Liam M.</strong><span>Director of AI · Mining Operations (AU)</span></div>
+          <span class="author-flag">🇦🇺</span>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Asad's multi-agent RAG platform with LangGraph and MCP transformed how our consultants access institutional knowledge. What impressed us most was his focus on measurable outcomes."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">PK</div>
+          <div class="author-info"><strong>Priya K.</strong><span>Partner · Management Consulting (USA)</span></div>
+          <span class="author-flag">🇺🇸</span>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Working with Asad across time zones was seamless. Our smart city ANPR platform is now live across 60+ camera feeds with 99%+ accuracy and clear, documented engineering."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AK</div>
+          <div class="author-info"><strong>Ahmed K.</strong><span>Founder · Smart City Solutions (UAE)</span></div>
+          <span class="author-flag">🇦🇪</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certifications">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Credentials</div>
+      <h2 class="section-title">Licenses &amp; Certifications</h2>
+      <p class="section-sub">
+        Continuous learning validated through globally recognized industry certifications
+        and peer-reviewed assessments.
+      </p>
+    </div>
+
+    <div class="certs-grid">
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div class="cert-info">
+          <h4>AI Web Developer — Top 25% Globally</h4>
+          <div class="meta">TestDome · Aug 2025</div>
+          <a href="https://www.testdome.com/certificates" target="_blank" rel="noopener" class="meta-link">View Certificate →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div class="cert-info">
+          <h4>Google Crowdsource Learning Program</h4>
+          <div class="meta">Google · Sep 2023</div>
+          <a href="https://crowdsource.google.com/" target="_blank" rel="noopener" class="meta-link">View Program →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="cert-info">
+          <h4>Registered PEC Computer Engineer</h4>
+          <div class="meta">Pakistan Engineering Council · Mar 2023</div>
+          <a href="https://www.pec.org.pk/" target="_blank" rel="noopener" class="meta-link">Verify Registration →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></div>
+        <div class="cert-info">
+          <h4>IBM AI Engineering Professional Certificate</h4>
+          <div class="meta">IBM / Coursera · Feb 2023</div>
+          <a href="https://www.coursera.org/professional-certificates/ai-engineer" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="cert-info">
+          <h4>AI Capstone Project with Deep Learning</h4>
+          <div class="meta">IBM / Coursera · Feb 2023</div>
+          <a href="https://www.coursera.org/learn/ai-capstone-project-deep-learning" target="_blank" rel="noopener" class="meta-link">View Certificate →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg></div>
+        <div class="cert-info">
+          <h4>Deep Learning with TensorFlow</h4>
+          <div class="meta">IBM / Coursera · Feb 2023</div>
+          <a href="https://www.coursera.org/learn/deep-learning-tensorflow" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="cert-info">
+          <h4>Deep Neural Networks with PyTorch <span style="color:var(--amber)">(Honors)</span></h4>
+          <div class="meta">IBM / Coursera · Feb 2023</div>
+          <a href="https://www.coursera.org/learn/deep-neural-networks-with-pytorch" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="cert-info">
+          <h4>Computer Vision &amp; Image Processing Essentials</h4>
+          <div class="meta">IBM / Coursera · Jan 2023</div>
+          <a href="https://www.coursera.org/learn/computer-vision-image-processing" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/></svg></div>
+        <div class="cert-info">
+          <h4>Deep Learning Essentials with Keras</h4>
+          <div class="meta">IBM / Coursera · Jan 2023</div>
+          <a href="https://www.coursera.org/learn/deep-learning-keras" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+        </div>
+      </div>
+
+      <div class="cert reveal">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="cert-info">
+          <h4>Machine Learning with Python <span style="color:var(--amber)">(Honors)</span></h4>
+          <div class="meta">IBM / Coursera · Jan 2023</div>
+          <a href="https://www.coursera.org/learn/machine-learning-with-python" target="_blank" rel="noopener" class="meta-link">View Credential →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ AWARDS ============ -->
+<section id="awards" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Recognition</div>
+      <h2 class="section-title">Honors &amp; Awards</h2>
+      <p class="section-sub">
+        Recognized for innovation in applied AI, computer vision, and security systems engineering.
+      </p>
+    </div>
+
+    <div class="awards-grid">
+
+      <div class="award reveal">
+        <div class="year">APRIL 2023</div>
+        <h4>Winner — 3rd Engineering Capstone Expo 2022</h4>
+        <div class="issuer">Pakistan Engineering Council (PEC)</div>
+        <p>
+          Recognized for an award-winning project integrating facial recognition, face mask detection,
+          weapon detection, and safety helmet detection through custom model training on the
+          NVIDIA Jetson Nano, using OAK cameras for real-time surveillance with instantaneous alerts.
+        </p>
+      </div>
+
+      <div class="award reveal">
+        <div class="year">MARCH 2022</div>
+        <h4>Project Exhibition Winner — GIKI NEO-22</h4>
+        <div class="issuer">Ghulam Ishaq Khan Institute of Engineering Sciences &amp; Technology</div>
+        <p>
+          Achieved top honors for presenting a cutting-edge intrusion detection system implemented
+          with OAK cameras and Python — showcasing expertise in innovative security solutions.
+        </p>
+      </div>
+
+      <div class="award reveal">
+        <div class="year">FEBRUARY 2020</div>
+        <h4>NUTECH Career Acceleration Program (NCAP) Award</h4>
+        <div class="issuer">National University of Technology (NUTECH)</div>
+        <p>
+          Participated in expert-led workshops and training sessions designed to enhance personal
+          development, refine career skills, and cultivate a competitive edge for future
+          professional endeavors.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Academics</div>
+      <h2 class="section-title">Education</h2>
+      <p class="section-sub">Formal engineering and AI training from the National University of Technology.</p>
+    </div>
+
+    <div class="projects-grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <span class="project-domain">MS · AI</span>
+        </div>
+        <h3>Master of Science in Artificial Intelligence</h3>
+        <p style="color:var(--violet);font-weight:500;margin-bottom:10px">National University of Technology (NUTECH) — Islamabad, Pakistan</p>
+        <p>2024 — 2026 · Advanced study in machine learning, deep learning, computer vision, NLP, LLM systems, and intelligent architectures.</p>
+        <div class="tags">
+          <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span>
+          <span class="tag">Computer Vision</span><span class="tag">NLP</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+          <span class="project-domain">BS · CEN</span>
+        </div>
+        <h3>Bachelor of Science in Computer Engineering</h3>
+        <p style="color:var(--violet);font-weight:500;margin-bottom:10px">National University of Technology (NUTECH) — Islamabad, Pakistan</p>
+        <p>2018 — 2022 · Foundation in computer architecture, embedded systems, hardware security, and software engineering.</p>
+        <div class="tags">
+          <span class="tag">Computer Architecture</span><span class="tag">Embedded Systems</span>
+          <span class="tag">Hardware Security</span><span class="tag">Software Engineering</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div class="eyebrow center" style="justify-content:center">Let's Work Together</div>
+      <h2>Have an AI, Vision or LLM<br />problem worth solving?</h2>
+      <p>
+        I partner with a small number of clients each quarter to deliver focused, high-impact
+        AI systems. If you're building something in computer vision, LLM agents, voice AI,
+        MCP integrations, RAG, or edge AI — I'd love to hear about it.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:asadalif18@gmail.com" class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          asadalif18@gmail.com
+        </a>
+        <a href="tel:+923060122333" class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +92 306 0122333
+        </a>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          github.com/asadalif18
+        </a>
+      </div>
+
+      <div class="contact-actions">
+        <a href="mailto:asadalif18@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20AI%2FCV%2FLLM%20Engagement" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Start a Conversation
+        </a>
+        <a href="https://github.com/asadalif18" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">AA</span>
+      <div>
+        <strong style="color:var(--txt);font-weight:700">Asad Ali</strong>
+        <div style="font-size:.76rem;color:var(--dim)">AI/ML · Computer Vision · LLMs · Python</div>
+      </div>
+    </div>
+    <div style="font-size:.8rem;color:var(--dim)">© <span id="year"></span> · All rights reserved</div>
+    <div class="footer-links">
+      <a href="https://github.com/asadalif18" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:asadalif18@gmail.com">Email</a>
+      <a href="#hero">Back to Top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- ================= THREE.JS 3D NEURAL NETWORK ================= -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+/* =========================================================
+   3D REVOLVING NEURAL NETWORK
+   ========================================================= */
+const canvas = document.getElementById('three-canvas');
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 22);
+
+const renderer = new THREE.WebGLRenderer({
+  canvas,
+  alpha: true,
+  antialias: true,
+  powerPreference: 'high-performance'
+});
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(0x000000, 0);
+
+/* ----- Neural Network Generation ----- */
+const networkGroup = new THREE.Group();
+scene.add(networkGroup);
+
+const layers = [5, 8, 10, 10, 8, 5]; // Neural network architecture
+const layerSpacing = 3.4;
+const nodeRadius = 0.14;
+const totalNodes = layers.reduce((a, b) => a + b, 0);
+
+/* Node positions */
+const nodePositions = [];
+layers.forEach((count, layerIdx) => {
+  const x = (layerIdx - (layers.length - 1) / 2) * layerSpacing;
+  const totalHeight = (count - 1) * 1.1;
+  for (let i = 0; i < count; i++) {
+    const y = -totalHeight / 2 + i * 1.1;
+    const z = (Math.random() - 0.5) * 0.6;
+    nodePositions.push({ x, y, z, layer: layerIdx, idx: i });
+  }
+});
+
+/* Node geometry & material */
+const nodeGeo = new THREE.SphereGeometry(nodeRadius, 16, 16);
+
+/* Colors: cyan → violet across layers */
+const cyanColor = new THREE.Color(0x22d3ee);
+const violetColor = new THREE.Color(0xa78bfa);
+const emeraldColor = new THREE.Color(0x34d399);
+
+const nodeMaterial = new THREE.MeshBasicMaterial({
+  color: cyanColor,
+  transparent: true,
+  opacity: 0.95
+});
+
+/* Create nodes */
+const nodeMeshes = [];
+nodePositions.forEach((p, i) => {
+  const mat = nodeMaterial.clone();
+  const t = p.layer / (layers.length - 1);
+  mat.color = cyanColor.clone().lerp(violetColor, t);
+  const mesh = new THREE.Mesh(nodeGeo, mat);
+  mesh.position.set(p.x, p.y, p.z);
+  mesh.userData = {
+    baseScale: 1,
+    phase: Math.random() * Math.PI * 2,
+    speed: 0.5 + Math.random() * 0.8
+  };
+  networkGroup.add(mesh);
+  nodeMeshes.push(mesh);
+});
+
+/* Connections between consecutive layers (not full mesh — sparse) */
+const lineMaterial = new THREE.LineBasicMaterial({
+  color: 0x38bdf8,
+  transparent: true,
+  opacity: 0.15
+});
+
+const lineMaterialStrong = new THREE.LineBasicMaterial({
+  color: 0x22d3ee,
+  transparent: true,
+  opacity: 0.35
+});
+
+const connectionLines = [];
+
+for (let l = 0; l < layers.length - 1; l++) {
+  const fromStart = layers.slice(0, l).reduce((a, b) => a + b, 0);
+  const toStart = layers.slice(0, l + 1).reduce((a, b) => a + b, 0);
+
+  for (let i = 0; i < layers[l]; i++) {
+    const fromNode = nodePositions[fromStart + i];
+    for (let j = 0; j < layers[l + 1]; j++) {
+      // Sparse connections — only ~35% for visual clarity
+      if (Math.random() > 0.38) continue;
+
+      const toNode = nodePositions[toStart + j];
+
+      const geo = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(fromNode.x, fromNode.y, fromNode.z),
+        new THREE.Vector3(toNode.x, toNode.y, toNode.z)
+      ]);
+
+      const mat = Math.random() > 0.7 ? lineMaterialStrong.clone() : lineMaterial.clone();
+      const line = new THREE.Line(geo, mat);
+      line.userData = {
+        opacityBase: mat.opacity,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 1.2
+      };
+      networkGroup.add(line);
+      connectionLines.push(line);
+    }
+  }
+}
+
+/* Subtle rotating outer ring of dots */
+const ringGroup = new THREE.Group();
+scene.add(ringGroup);
+const ringGeo = new THREE.SphereGeometry(0.06, 8, 8);
+const ringMat = new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.5 });
+const ringCount = 90;
+for (let i = 0; i < ringCount; i++) {
+  const angle = (i / ringCount) * Math.PI * 2;
+  const radius = 16 + Math.sin(i * 0.7) * 1.5;
+  const dot = new THREE.Mesh(ringGeo, ringMat.clone());
+  dot.position.set(
+    Math.cos(angle) * radius,
+    Math.sin(angle * 2.3) * 2,
+    Math.sin(angle) * radius
+  );
+  ringGroup.add(dot);
+}
+
+/* Floating particles for depth */
+const particlesGeo = new THREE.BufferGeometry();
+const particleCount = 400;
+const particlePositions = new Float32Array(particleCount * 3);
+for (let i = 0; i < particleCount; i++) {
+  particlePositions[i * 3] = (Math.random() - 0.5) * 60;
+  particlePositions[i * 3 + 1] = (Math.random() - 0.5) * 40;
+  particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 30 - 10;
+}
+particlesGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+const particlesMat = new THREE.PointsMaterial({
+  color: 0x38bdf8,
+  size: 0.06,
+  transparent: true,
+  opacity: 0.35,
+  sizeAttenuation: true
+});
+const particles = new THREE.Points(particlesGeo, particlesMat);
+scene.add(particles);
+
+/* ----- Animation Loop ----- */
+const clock = new THREE.Clock();
+let targetRotY = 0;
+let targetRotX = 0;
+let currentRotY = 0;
+let currentRotX = 0;
+
+/* Mouse parallax */
+window.addEventListener('mousemove', (e) => {
+  const nx = (e.clientX / window.innerWidth) * 2 - 1;
+  const ny = (e.clientY / window.innerHeight) * 2 - 1;
+  targetRotY = nx * 0.35;
+  targetRotX = ny * 0.2;
+});
+
+/* Scroll influence */
+let scrollFactor = 0;
+window.addEventListener('scroll', () => {
+  scrollFactor = Math.min(window.scrollY / window.innerHeight, 1.5);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  const t = clock.getElapsedTime();
+
+  /* Continuous rotation of whole network */
+  currentRotY += (targetRotY - currentRotY) * 0.05;
+  currentRotX += (targetRotX - currentRotX) * 0.05;
+
+  networkGroup.rotation.y = t * 0.18 + currentRotY;
+  networkGroup.rotation.x = Math.sin(t * 0.25) * 0.08 + currentRotX;
+  networkGroup.position.y = Math.sin(t * 0.5) * 0.2 - scrollFactor * 2;
+  networkGroup.position.x = 2 + Math.sin(t * 0.15) * 0.4;
+
+  /* Pulse nodes */
+  nodeMeshes.forEach(m => {
+    const s = 1 + Math.sin(t * m.userData.speed + m.userData.phase) * 0.28;
+    m.scale.setScalar(s);
+    m.material.opacity = 0.7 + Math.sin(t * m.userData.speed + m.userData.phase) * 0.28;
+  });
+
+  /* Flicker connections */
+  connectionLines.forEach(l => {
+    l.material.opacity = l.userData.opacityBase * (0.6 + Math.sin(t * l.userData.speed + l.userData.phase) * 0.5);
+  });
+
+  /* Rotate ring */
+  ringGroup.rotation.y = -t * 0.12;
+  ringGroup.rotation.z = Math.sin(t * 0.1) * 0.15;
+
+  /* Drift particles */
+  particles.rotation.y = t * 0.02;
+  particles.rotation.x = Math.sin(t * 0.05) * 0.1;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+/* ----- Resize ----- */
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  }, 100);
+});
+</script>
+
+<!-- ================= UI SCRIPTS ================= -->
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const header = document.getElementById('header');
+const toTop  = document.getElementById('toTop');
+function onScroll(){
+  const y = window.scrollY;
+  header.classList.toggle('scrolled', y > 20);
+  toTop.classList.toggle('show', y > 600);
+}
+window.addEventListener('scroll', onScroll, { passive:true });
+onScroll();
+
+const burger   = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+
+burger.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', String(open));
+});
+
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  });
+});
+
+toTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (i * 55) + 'ms';
+      entry.target.classList.add('in');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -70px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+const sections = [...document.querySelectorAll('section[id]')];
+const navAnchors = [...navLinks.querySelectorAll('a[href^="#"]')];
+function setActive(){
+  const pos = window.scrollY + 150;
+  let current = '';
+  sections.forEach(s => { if (pos >= s.offsetTop) current = s.id; });
+  navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}
+window.addEventListener('scroll', setActive, { passive:true });
+setActive();
+
+const roles = [
+  'Computer Vision Engineer',
+  'LLM & Agentic AI Engineer',
+  'MCP & RAG Systems Architect',
+  'Voice AI (STT / TTS) Engineer',
+  'Full Stack Python Developer',
+  'Edge AI & MLOps Engineer'
+];
+const roleEl = document.getElementById('role');
+let roleIndex = 0, charIndex = 0, deleting = false;
+
+function typeLoop(){
+  const word = roles[roleIndex];
+  if (!deleting){
+    roleEl.textContent = word.slice(0, ++charIndex);
+    if (charIndex === word.length){ deleting = true; setTimeout(typeLoop, 1800); return; }
+  } else {
+    roleEl.textContent = word.slice(0, --charIndex);
+    if (charIndex === 0){ deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
+  }
+  setTimeout(typeLoop, deleting ? 36 : 76);
+}
+typeLoop();
+</script>
+
+</body>
+</html>
